@@ -19,6 +19,9 @@ public class ProjectileBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+		var enemy = other.collider.GetComponent<EnemyBehaviour>();
+		if(enemy)
+			enemy.UpdateHit(1);
         if (other.gameObject.CompareTag("Player"))
             Destroy(other.gameObject);
         Destroy(gameObject);
