@@ -6,6 +6,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public float Hitpoints;
     public float MaxHitpoints = 5;
+
     void Start()
     {
         Hitpoints = MaxHitpoints;
