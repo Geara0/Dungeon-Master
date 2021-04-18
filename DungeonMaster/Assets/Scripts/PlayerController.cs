@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
     public float speed;
+
+    public ProjectileBehaviour projectilePrefab;
+    public Transform launchOffset;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,10 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
         anim.SetFloat("Speed", movement.sqrMagnitude);
-        
+
+        if (Input.GetButtonDown("Fire1"))
+            Instantiate(projectilePrefab, launchOffset.position, transform.rotation);
+
     }
 
     private void FixedUpdate()
