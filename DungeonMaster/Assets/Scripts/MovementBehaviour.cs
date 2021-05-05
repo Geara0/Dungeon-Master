@@ -1,18 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.VFX;
 
 public class MovementBehaviour : MonoBehaviour
 {
     public float speed;
     public GameObject start;
-    
+    public float spawnRate = 1;
+    public List<int> enemyCount;
+    public List<EnemyBehaviour> enemy;
+
+    private float nextActionTime;
+
     private List<Vector2> wayPoints;
 
-    private int wayIndex;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +37,7 @@ public class MovementBehaviour : MonoBehaviour
         {
             var lenToStart = Vector2.Distance(start.transform.position, tile);
             if (!(lenToStart < minLen)) continue;
-            
+
             startPoint = tile;
             minLen = lenToStart;
         }
@@ -41,40 +46,50 @@ public class MovementBehaviour : MonoBehaviour
         //Оно не может быть нулём
         corePoints.Add((Vector2) startPoint);
         tiles.Remove((Vector2) startPoint);
-        
+
         var corePoint = (Vector2) startPoint;
         while (tiles.Count != 0)
             for (var dx = -1; dx <= 1; dx++)
             for (var dy = -1; dy <= 1; dy++)
             {
                 if (dx != 0 && dy != 0 || dx == 0 && dy == 0) continue;
-                
+
                 var dirVector = new Vector2(dx, dy);
                 corePoint = GetNextCorePoint(tiles, corePoint, dirVector);
                 if (!corePoints.Contains(corePoint)) corePoints.Add(corePoint);
             }
 
         wayPoints = corePoints;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        Spawn();
     }
 
-    private void Move()
+    private void Spawn()
     {
-        var dir = wayPoints[wayIndex] - (Vector2) transform.position;
-        
-        transform.Translate(dir.normalized * (Time.deltaTime * speed));
-
-        if (Vector3.Distance(transform.position, wayPoints[wayIndex]) < .2f)
+        if (Time.time > nextActionTime && enemyCount.Count > 0)
         {
-            if (wayIndex < wayPoints.Count - 1)
-                wayIndex++;
-            else 
-                Destroy(gameObject);
+            nextActionTime += 1 / spawnRate;
+            
+            if (enemyCount[enemyCount.Count - 1] != 0)
+            {
+                var tmpEnemy = 
+                    Instantiate(enemy[enemy.Count - 1], transform.position, Quaternion.Euler(0f, 0f, 0f));
+                //tmpEnemy.transform.SetParent(gameObject.transform, false);
+                var enemyScr = tmpEnemy.GetComponent<EnemyBehaviour>();
+                enemyScr.wayPoints = wayPoints;
+                enemyScr.speed = speed;
+                enemyCount[enemyCount.Count - 1]--;
+            }
+            else
+            {
+                enemy.RemoveAt(enemy.Count - 1);
+                enemyCount.RemoveAt(enemyCount.Count - 1);
+            }
         }
     }
 
