@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Tower
   - Road
-  - Background
-  - Objects
   layers:
   - Default
   - TransparentFX
@@ -48,9 +46,6 @@ TagManager:
   - name: Map
     uniqueID: 1394241493
     locked: 0
-  - name: Shade
-    uniqueID: 3383033545
-    locked: 0
   - name: Objects
     uniqueID: 2867557823
     locked: 0
@@ -65,7 +60,4 @@ TagManager:
     locked: 0
   - name: Bullets
     uniqueID: 1368379687
-    locked: 0
-  - name: Text
-    uniqueID: 3441768849
     locked: 0
