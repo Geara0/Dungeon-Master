@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
     public float speed;
+    public int maxHealth = 10;
+    public int currentHealth;
+    public HitbarBehaviour healthBar;
 
     public ProjectileBehaviour projectilePrefab;
     public Transform launchOffset;
@@ -18,6 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -32,6 +37,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
             Instantiate(projectilePrefab, launchOffset.position, transform.rotation);
 
+    }
+
+    public void TakeHit(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
+            Destroy(gameObject);
     }
 
     private void FixedUpdate()

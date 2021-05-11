@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class HitbarBehaviour : MonoBehaviour
 {
     public Slider Slider;
-    public Color LowHP;
-    public Color HighHP;
-    public Vector3 Offset;
+	public Gradient gradient;
+	public Image fill;
 
-    public void SetHealth(float health, float maxHealth)
+    public void SetMaxHealth(int maxHealth)
     {
-        Slider.gameObject.SetActive(health <= maxHealth);
-        Slider.value = health;
+        Slider.value = maxHealth;
         Slider.maxValue = maxHealth;
-        Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(LowHP, HighHP, Slider.normalizedValue);
+
+		fill.color = gradient.Evaluate(1f);
     }
-    
-    void Update()
+
+	public void SetHealth(int health)
     {
-        Slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
+        Slider.value = health;
+		fill.color = gradient.Evaluate(Slider.normalizedValue);
     }
 }

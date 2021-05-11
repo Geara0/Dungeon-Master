@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1955059225265724417}
   - component: {fileID: 6005458410914142489}
   m_Layer: 0
-  m_Name: AlienSpaceship
+  m_Name: Alien Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f2d6749406b184b9d64329a9e86296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hitpoints: 12
-  MaxHitpoints: 12
-  Hitbar: {fileID: 0}
+  Hitpoints: 1
+  MaxHitpoints: 1
+  wayPoints: []
+  speed: 0
