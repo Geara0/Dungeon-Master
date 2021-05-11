@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    public float Hitpoints;
-    public float MaxHitpoints = 5;
-	public HitbarBehaviour Hitbar;
+    public int Hitpoints;
+    public int MaxHitpoints;
     public List<Vector2> wayPoints;
 
     private int wayIndex;
@@ -23,7 +22,6 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         Hitpoints = MaxHitpoints;
-		Hitbar.SetHealth(Hitpoints, MaxHitpoints);
     }
 
     private void Update()
@@ -46,11 +44,18 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    public void UpdateHit(float damage)
+    public void TakeHit(int damage)
     {
         Hitpoints -= damage;
-		Hitbar.SetHealth(Hitpoints, MaxHitpoints);
         if (Hitpoints <= 0)
             Destroy(gameObject);
+    }
+
+	private void OnCollisionEnter2D(Collision2D other)
+    {
+		var baseObj = other.collider.GetComponent<BaseBehaviour>();
+		if(baseObj)
+			baseObj.TakeHit(1);
+        Destroy(gameObject);
     }
 }
