@@ -1893,6 +1893,111 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1001 &51803437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8837544048929304844, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544048929304844, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366067, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_Name
+      value: HealthBar Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837544049887366071, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
 --- !u!213 &52664530
 Sprite:
   m_ObjectHideFlags: 0
@@ -26453,7 +26558,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1.6, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -26523,7 +26628,7 @@ SpriteRenderer:
   m_SortingLayerID: 1064715855
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b1a0f34ae65244844bbb5b24652d172e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5092fa16174615e47a666b8afa0bfc5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -26542,8 +26647,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568189041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.1521, y: 0.1379, z: 0}
-  m_LocalScale: {x: 0.22373846, y: 0.22373846, z: 0.22373846}
+  m_LocalPosition: {x: -9.84, y: 0.91, z: 0}
+  m_LocalScale: {x: 0.54384106, y: 0.5527235, z: 0.22373846}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -26561,6 +26666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
+  price: 200
   projectilePrefab: {fileID: 7377944091098659700, guid: d882a4a9706b9a44bbe90155a34f9339, type: 3}
 --- !u!114 &593876264
 MonoBehaviour:
@@ -26917,6 +27023,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  maxHealth: 10
+  currentHealth: 0
+  healthBar: {fileID: 1733519024}
   projectilePrefab: {fileID: 7377944091098659700, guid: d882a4a9706b9a44bbe90155a34f9339, type: 3}
   launchOffset: {fileID: 1814547558}
 --- !u!50 &670568197
@@ -32002,6 +32111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
+  price: 200
   projectilePrefab: {fileID: 7377944091098659700, guid: d882a4a9706b9a44bbe90155a34f9339, type: 3}
 --- !u!212 &1447828108
 SpriteRenderer:
@@ -32043,7 +32153,7 @@ SpriteRenderer:
   m_SortingLayerID: 1064715855
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b1a0f34ae65244844bbb5b24652d172e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2237806352828d74f9e149c9c9a65d66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -32106,7 +32216,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
+    oldSize: {x: 1.59, y: 1.58}
     newSize: {x: 1.6, y: 1.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -34268,6 +34378,17 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!114 &1733519024 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8837544048324185477, guid: 6521283f7b0acaf4fb49ed4a33dd4260, type: 3}
+  m_PrefabInstance: {fileID: 51803437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb0cddde30d78744bb2f621a77eee7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1775967812
 GameObject:
   m_ObjectHideFlags: 0
@@ -35209,7 +35330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hitpoints: 0
   MaxHitpoints: 5
-  Hitbar: {fileID: 1930080313}
   wayPoints: []
   speed: 0
 --- !u!58 &1889211383
@@ -35539,9 +35659,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Slider: {fileID: 1548592510}
-  LowHP: {r: 1, g: 0, b: 0, a: 0}
-  HighHP: {r: 0, g: 1, b: 0.5019608, a: 0}
-  Offset: {x: 0, y: 0, z: 0}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 0}
 --- !u!114 &1930080314
 MonoBehaviour:
   m_ObjectHideFlags: 0
