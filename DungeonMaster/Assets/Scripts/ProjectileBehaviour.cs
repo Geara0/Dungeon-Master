@@ -15,11 +15,10 @@ public class ProjectileBehaviour : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
 		var enemy = other.collider.GetComponent<EnemyBehaviour>();
-		var player = other.collider.GetComponent<PlayerController>();
 		if(enemy)
-			enemy.TakeHit(1);
-        if (player)
-            player.TakeHit(1);
+			enemy.UpdateHit(1);
+        if (other.gameObject.CompareTag("Player"))
+            Destroy(other.gameObject);
         Destroy(gameObject);
     }
 }
