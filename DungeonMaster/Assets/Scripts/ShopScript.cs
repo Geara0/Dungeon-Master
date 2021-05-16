@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,16 @@ using UnityEngine;
 public class ShopScript : MonoBehaviour
 {
     public Transform ItemGrid;
-    public List<GameObject> Items;
+    public DotBehaviour Dot;
+    public CellScript selfCell;
 
     public void CloseShop()
     {
         Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        
     }
 }

@@ -10,6 +10,9 @@ using Image = UnityEngine.UI.Image;
 public class BuyDot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public DotBehaviour dotPrefab;
+
+    private CellScript selfCell;
+
     public Image logo;
     public Text price;
 
@@ -20,14 +23,7 @@ public class BuyDot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         logo.sprite = dotPrefab.GetComponent<SpriteRenderer>().sprite;
         price.text = dotPrefab.price.ToString();
     }
-    /*
-    public void SetStartData(DotBehaviour dot)
-    {
-        dotPrefab = dot;
-        logo.sprite = dot.projectilePrefab.GetComponent<SpriteRenderer>().sprite;
-        price.text = dot.price.ToString();
-    }
-    */
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
         GetComponent<Image>().color = CurrColor;
@@ -40,6 +36,13 @@ public class BuyDot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        throw new NotImplementedException();
+        if (MoneyManager.Instance.GameMoney >= dotPrefab.price)
+        {
+            GetComponentInParent<ShopScript>().selfCell.BuildDot();
+            
+            MoneyManager.Instance.GameMoney -= dotPrefab.price;
+            MoneyManager.Instance.MoneyTxt.text = MoneyManager.Instance.GameMoney.ToString();
+            Destroy(transform.parent.gameObject);
+        }
     }
 }
