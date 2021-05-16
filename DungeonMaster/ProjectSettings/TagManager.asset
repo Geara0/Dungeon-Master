@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Tower
   - Road
+  - Background
+  - Objects
   layers:
   - Default
   - TransparentFX
@@ -60,4 +62,7 @@ TagManager:
     locked: 0
   - name: Bullets
     uniqueID: 1368379687
+    locked: 0
+  - name: UI
+    uniqueID: 182990231
     locked: 0

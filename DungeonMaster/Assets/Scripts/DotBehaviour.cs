@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 // ReSharper disable Unity.InefficientPropertyAccess
 
-public class DotBehaviour : MonoBehaviour
+public class DotBehaviour : MonoBehaviour, ITower
 {
     private float nextActionTime;
     public float fireRate = 1;
@@ -12,6 +12,11 @@ public class DotBehaviour : MonoBehaviour
     public ProjectileBehaviour projectilePrefab;
 
     void Update()
+    {
+        Shoot();
+    }
+
+    public void Shoot()
     {
         if (Time.time > nextActionTime)
         {
@@ -24,5 +29,15 @@ public class DotBehaviour : MonoBehaviour
             Instantiate(projectilePrefab, transform.position - xOffset, Quaternion.Euler(0f, 0f, 180f));
             Instantiate(projectilePrefab, transform.position - yOffset, Quaternion.Euler(0f, 0f, 270f));
         }
+    }
+
+    public Sprite getSprite()
+    {
+        return GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public string getPrice()
+    {
+        return price.ToString();
     }
 }
