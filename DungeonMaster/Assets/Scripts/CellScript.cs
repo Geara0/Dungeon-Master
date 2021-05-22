@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.QuickSearch;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
 
@@ -13,13 +14,24 @@ public class CellScript : MonoBehaviour
     public Color baseColor;
     public Color currColor;
 
-    public GameObject TowerPref;
+    public GameObject DotPrefab;
+    public GameObject RndPrefab;
     public GameObject ShopPref;
+
+    public Scene scene;
 
     public void BuildDot()
     {
         //var tmpTower = Instantiate(gameObject.AddComponent<DotBehaviour>());
-        var tmpTower = Instantiate(TowerPref, transform, false);
+        var tmpTower = Instantiate(DotPrefab, transform, false);
+        tmpTower.transform.position = transform.position;
+        hasTower = true;
+    }
+    
+    public void BuildRnd()
+    {
+        //var tmpTower = Instantiate(gameObject.AddComponent<DotBehaviour>());
+        var tmpTower = Instantiate(RndPrefab, transform, false);
         tmpTower.transform.position = transform.position;
         hasTower = true;
     }
@@ -37,6 +49,7 @@ public class CellScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Destroy(GameObject.Find("Shop(Clone)"));
         if (!hasTower)
         {
             var shopObj = Instantiate(ShopPref);

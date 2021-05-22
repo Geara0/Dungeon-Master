@@ -99,7 +99,8 @@ MonoBehaviour:
   hasTower: 0
   baseColor: {r: 0, g: 0, b: 0, a: 0}
   currColor: {r: 0, g: 0, b: 0, a: 0.5176471}
-  TowerPref: {fileID: 5700179830061876163, guid: c6dbf3c9c52f6cf4c9aa80de551a30be, type: 3}
+  DotPrefab: {fileID: 5700179830061876163, guid: c6dbf3c9c52f6cf4c9aa80de551a30be, type: 3}
+  RndPrefab: {fileID: 7933497801943520837, guid: 026c8c0306c0d2240b0a808f00fcb696, type: 3}
   ShopPref: {fileID: 7750549971177609262, guid: cedeced49031bf74f95fb1403168c2bc, type: 3}
 --- !u!61 &-7027020407487342682
 BoxCollider2D:

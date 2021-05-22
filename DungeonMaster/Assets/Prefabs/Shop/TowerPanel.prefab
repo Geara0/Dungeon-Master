@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5451038788363220738}
   - component: {fileID: 5451038788363220739}
   - component: {fileID: 5451038788363220748}
+  - component: {fileID: 4940781796176494421}
   m_Layer: 5
   m_Name: TowerPanel
   m_TagString: Untagged
@@ -166,6 +167,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dotPrefab: {fileID: 0}
+  logo: {fileID: 5451038787892443091}
+  price: {fileID: 5451038789361322837}
+  BaseColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+  CurrColor: {r: 0, g: 0, b: 0, a: 0.19607843}
+--- !u!114 &4940781796176494421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451038788363220750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819125ecc9de59f45b3ea6e70b60c5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rndPrefab: {fileID: 0}
   logo: {fileID: 5451038787892443091}
   price: {fileID: 5451038789361322837}
   BaseColor: {r: 1, g: 1, b: 1, a: 0.39215687}

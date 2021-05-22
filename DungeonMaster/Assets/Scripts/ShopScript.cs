@@ -7,6 +7,7 @@ public class ShopScript : MonoBehaviour
 {
     public Transform ItemGrid;
     public DotBehaviour Dot;
+    public RndBehaviour Rnd;
     public CellScript selfCell;
 
     public void CloseShop()
