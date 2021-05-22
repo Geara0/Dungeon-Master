@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class DotBehaviour : MonoBehaviour, ITower
 {
-    private float nextActionTime;
     public float fireRate = 1;
     public int price = 200;
+    private float nextActionTime;
     
     public ProjectileBehaviour projectilePrefab;
 
