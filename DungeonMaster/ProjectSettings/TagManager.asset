@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tower
+  - Road
+  - Background
+  - Objects
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Grid
-  - 
+  - Bullets
   - 
   - 
   - 
@@ -40,4 +44,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Map
+    uniqueID: 1394241493
+    locked: 0
+  - name: Objects
+    uniqueID: 2867557823
+    locked: 0
+  - name: Towers
+    uniqueID: 1064715855
+    locked: 0
+  - name: Enemies
+    uniqueID: 19278521
+    locked: 0
+  - name: Player
+    uniqueID: 2156095801
+    locked: 0
+  - name: Bullets
+    uniqueID: 1368379687
+    locked: 0
+  - name: UI
+    uniqueID: 182990231
     locked: 0
