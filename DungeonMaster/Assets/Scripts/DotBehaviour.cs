@@ -3,32 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 // ReSharper disable Unity.InefficientPropertyAccess
 
-public class DotBehaviour : MonoBehaviour
+public class DotBehaviour : MonoBehaviour, ITower
 {
-    private float nextActionTime;
     public float fireRate = 1;
-    private float projectileDivisor = 2;
+    public int price = 200;
+    private float nextActionTime;
     
     public ProjectileBehaviour projectilePrefab;
-    // Start is called before the first frame update
-    void Start()
+
+    void Update()
     {
-        
+        Shoot();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Shoot()
     {
         if (Time.time > nextActionTime)
         {
             nextActionTime += 1 / fireRate;
-            var xOffset = transform.right * transform.localScale.x;
-            var yOffset = transform.up * transform.localScale.y;
+            var xOffset = transform.right * (transform.localScale.x / 2);
+            var yOffset = transform.up * (transform.localScale.y / 2);
 
             Instantiate(projectilePrefab, transform.position + xOffset, Quaternion.Euler(0f, 0f, 0f));
             Instantiate(projectilePrefab, transform.position + yOffset, Quaternion.Euler(0f, 0f, 90f));
             Instantiate(projectilePrefab, transform.position - xOffset, Quaternion.Euler(0f, 0f, 180f));
             Instantiate(projectilePrefab, transform.position - yOffset, Quaternion.Euler(0f, 0f, 270f));
         }
+    }
+
+    public Sprite getSprite()
+    {
+        return GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public string getPrice()
+    {
+        return price.ToString();
     }
 }
