@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     public ProjectileBehaviour projectilePrefab;
     public Transform launchOffset;
+    public GameObject videoPlayer;
+    public int timeToStop;
+    public GameObject objectToDestroy;
 
     private void Start()
     {
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        videoPlayer.SetActive(false);
     }
 
     private void Update()
@@ -42,7 +46,12 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
+        {
+            videoPlayer.SetActive(true);
+            Destroy(videoPlayer, timeToStop);
             Destroy(gameObject);
+            Destroy(objectToDestroy);
+        }
     }
 
     public static void GainMoney(int count)
