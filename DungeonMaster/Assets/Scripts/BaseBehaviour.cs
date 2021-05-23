@@ -13,7 +13,7 @@ public class BaseBehaviour : MonoBehaviour
     {
         Hitpoints = MaxHitpoints;
         videoPlayer.SetActive(false);
-    }
+	}
 
     public void TakeHit(int damage)
     {
