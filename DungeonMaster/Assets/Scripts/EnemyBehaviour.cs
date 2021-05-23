@@ -55,7 +55,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             var rnd = new Random();
             Destroy(gameObject);
-            SpawnCoin(rnd.Next(0, maxMoneyCount));
+            SpawnCoin(rnd.Next(1, maxMoneyCount));
         }
     }
 

@@ -6,13 +6,7 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
     public float speed = 3;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     
-    // Update is called once per frame
     void Update()
     {
         transform.position += transform.right * (Time.deltaTime * speed);
@@ -21,10 +15,11 @@ public class ProjectileBehaviour : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
 		var enemy = other.collider.GetComponent<EnemyBehaviour>();
+		var player = other.collider.GetComponent<PlayerController>();
 		if(enemy)
-			enemy.UpdateHit(1);
-        if (other.gameObject.CompareTag("Player"))
-            Destroy(other.gameObject);
+			enemy.TakeHit(1);
+        if (player)
+            player.TakeHit(1);
         Destroy(gameObject);
     }
 }
