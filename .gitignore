@@ -52,7 +52,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-# End of https://www.gitignore.io/api/unity
 *.log
 DungeonMaster/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+
+# End of https://www.gitignore.io/api/unity
