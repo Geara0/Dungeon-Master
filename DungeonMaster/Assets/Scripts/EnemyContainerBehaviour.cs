@@ -18,6 +18,7 @@ public class EnemyContainerBehaviour : MonoBehaviour
     
     public GameObject enemyPrefab;
     public int enemyCount;
+    public float regainValue;
     
     public EnemyContainerBehaviour(List<Vector2> wayPoints, float speed)
     {
@@ -60,6 +61,9 @@ public class EnemyContainerBehaviour : MonoBehaviour
             Destroy(gameObject);
             SpawnCoin(rnd.Next(1, maxMoneyCount));
             SpawnEnemies(enemyCount);
+            ScoreManager.instance.AddPoints(500);
+            var player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
+            player.AddHP(regainValue);
         }
     }
 
