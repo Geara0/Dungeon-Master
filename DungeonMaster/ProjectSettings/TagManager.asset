@@ -9,6 +9,7 @@ TagManager:
   - Background
   - Objects
   - Base
+  - LevelManager
   layers:
   - Default
   - TransparentFX
