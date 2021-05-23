@@ -12,7 +12,7 @@ public class MovementBehaviour : MonoBehaviour
     public GameObject start;
     public float spawnRate = 1;
     public List<int> enemyCount;
-    public List<EnemyBehaviour> enemy;
+    public List<GameObject> enemy;
 
     private float nextActionTime;
 
@@ -60,7 +60,6 @@ public class MovementBehaviour : MonoBehaviour
             }
 
         wayPoints = corePoints;
-
     }
 
     // Update is called once per frame
@@ -80,10 +79,20 @@ public class MovementBehaviour : MonoBehaviour
                 var tmpEnemy = 
                     Instantiate(enemy[enemy.Count - 1], transform.position, Quaternion.Euler(0f, 0f, 0f));
                 //tmpEnemy.transform.SetParent(gameObject.transform, false);
-                var enemyScr = tmpEnemy.GetComponent<EnemyBehaviour>();
-                enemyScr.wayPoints = wayPoints;
-                enemyScr.speed = speed;
-                enemyCount[enemyCount.Count - 1]--;
+                try
+                {
+                    var enemyScr = tmpEnemy.GetComponent<EnemyBehaviour>();
+                    enemyScr.wayPoints = wayPoints;
+                    enemyScr.speed = speed;
+                    enemyCount[enemyCount.Count - 1]--;
+                }
+                catch
+                {
+                    var enemyScr = tmpEnemy.GetComponent<EnemyContainerBehaviour>();
+                    enemyScr.wayPoints = wayPoints;
+                    enemyScr.speed = speed;
+                    enemyCount[enemyCount.Count - 1]--;
+                }
             }
             else
             {

@@ -9,7 +9,8 @@ public class MoneyBehaviour : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         var player = other.collider.GetComponent<PlayerController>();
-        if (player) PlayerController.GainMoney(cost);
+        if (!player) return;
+        PlayerController.GainMoney(cost);
         Destroy(gameObject);
     }
 }
