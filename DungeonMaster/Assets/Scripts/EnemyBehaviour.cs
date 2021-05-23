@@ -77,7 +77,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (baseObj)
         {
             baseObj.TakeHit(1);
-            Destroy(gameObject);
+            TakeHit(1);
         }
         //TODO: 
         //Сделай столкновение со снарядом

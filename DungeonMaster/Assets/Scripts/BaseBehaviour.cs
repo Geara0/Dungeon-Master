@@ -8,6 +8,7 @@ public class BaseBehaviour : MonoBehaviour
     public int MaxHitpoints;
     public GameObject videoPlayer;
     public int timeToStop;
+    public GameObject objectToDestroy;
     void Start()
     {
         Hitpoints = MaxHitpoints;
@@ -22,6 +23,16 @@ public class BaseBehaviour : MonoBehaviour
             videoPlayer.SetActive(true);
             Destroy(videoPlayer, timeToStop);
             Destroy(gameObject);
+            Destroy(objectToDestroy);
+        }
+    }
+    
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        var enemy = other.collider.GetComponent<EnemyBehaviour>();
+        if (enemy)
+        {
+            enemy.TakeHit(1);
         }
     }
 }
