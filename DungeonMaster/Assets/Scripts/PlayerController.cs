@@ -37,9 +37,6 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
         anim.SetFloat("Speed", movement.sqrMagnitude);
-
-        if (Input.GetButtonDown("Fire1"))
-            Instantiate(projectilePrefab, launchOffset.position, transform.rotation);
     }
 
     public void TakeHit(int damage)

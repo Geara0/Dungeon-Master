@@ -11,9 +11,18 @@ public class DotBehaviour : MonoBehaviour, ITower
     
     public ProjectileBehaviour projectilePrefab;
 
-    void Update()
+    private void Start()
     {
-        Shoot();
+        StartCoroutine(nameof(DoFire));
+    }
+
+    public IEnumerator DoFire()
+    {
+        while (true)
+        {
+            Shoot();
+            yield return new WaitForSeconds(1 / fireRate);
+        }
     }
 
     public void Shoot()
@@ -21,8 +30,8 @@ public class DotBehaviour : MonoBehaviour, ITower
         if (Time.time > nextActionTime)
         {
             nextActionTime += 1 / fireRate;
-            var xOffset = transform.right * (transform.localScale.x / 2);
-            var yOffset = transform.up * (transform.localScale.y / 2);
+            var xOffset = transform.right * (transform.localScale.x / 2 + .15f);
+            var yOffset = transform.up * (transform.localScale.y / 2 + .15f);
 
             Instantiate(projectilePrefab, transform.position + xOffset, Quaternion.Euler(0f, 0f, 0f));
             Instantiate(projectilePrefab, transform.position + yOffset, Quaternion.Euler(0f, 0f, 90f));

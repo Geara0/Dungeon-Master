@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.QuickSearch;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.VFX;
@@ -18,8 +19,7 @@ public class MovementBehaviour : MonoBehaviour
 
     private List<Vector2> wayPoints;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         var road = GameObject.FindGameObjectsWithTag("Road")[0].GetComponent<Tilemap>();
         var tiles = new HashSet<Vector2>();
@@ -60,20 +60,14 @@ public class MovementBehaviour : MonoBehaviour
             }
 
         wayPoints = corePoints;
+
+        StartCoroutine(nameof(Spawn));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator Spawn()
     {
-        Spawn();
-    }
-
-    private void Spawn()
-    {
-        if (Time.time > nextActionTime && enemyCount.Count > 0)
+        while (enemy.Count > 0)
         {
-            nextActionTime += 1 / spawnRate;
-            
             if (enemyCount[enemyCount.Count - 1] != 0)
             {
                 var tmpEnemy = 
@@ -99,10 +93,12 @@ public class MovementBehaviour : MonoBehaviour
                 enemy.RemoveAt(enemy.Count - 1);
                 enemyCount.RemoveAt(enemyCount.Count - 1);
             }
+            
+            yield return new WaitForSeconds(1 / spawnRate);
         }
     }
 
-    private Vector2 GetNextCorePoint(HashSet<Vector2> tiles, Vector2 corePoint, Vector2 dirVector)
+    private static Vector2 GetNextCorePoint(HashSet<Vector2> tiles, Vector2 corePoint, Vector2 dirVector)
     {
         while (tiles.Contains(corePoint + dirVector))
         {
