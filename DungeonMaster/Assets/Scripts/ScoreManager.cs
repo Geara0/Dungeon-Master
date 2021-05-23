@@ -4,13 +4,13 @@ using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoneyManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    public static MoneyManager Instance;
+    public static ScoreManager Instance;
 
-    public Text MoneyTxt;
+    public Text ScoreTxt;
 
-    public int GameMoney;
+    public int GameScore;
 
     private void Awake()
     {
