@@ -1,10 +1,10 @@
-﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using Random = System.Random;
 
-public class EnemyBehaviour : MonoBehaviour
+public class EnemyContainerBehaviour : MonoBehaviour
 {
     private int hitpoints;
     public int maxHitpoints;
@@ -13,10 +13,13 @@ public class EnemyBehaviour : MonoBehaviour
     public GameObject coinPrefab;
     public int maxMoneyCount;
 
-    public int wayIndex;
+    private int wayIndex;
     public float speed;
-
-    public EnemyBehaviour(List<Vector2> wayPoints, float speed)
+    
+    public GameObject enemyPrefab;
+    public int enemyCount;
+    
+    public EnemyContainerBehaviour(List<Vector2> wayPoints, float speed)
     {
         this.wayPoints = wayPoints;
         this.speed = speed;
@@ -56,9 +59,26 @@ public class EnemyBehaviour : MonoBehaviour
             var rnd = new Random();
             Destroy(gameObject);
             SpawnCoin(rnd.Next(1, maxMoneyCount));
+            SpawnEnemies(enemyCount);
         }
     }
 
+    private void SpawnEnemies(int count)
+    {
+        var rnd = new Random();
+        for (var i = 0; i < count; i++)
+        {
+            var posX = (float) rnd.NextDouble() * 2 - 1;
+            var posY = (float) rnd.NextDouble() * 2 - 1;
+            var tmpEnemy = 
+                Instantiate(enemyPrefab, transform.position + new Vector3(posX, posY), Quaternion.Euler(0f, 0f, 0f));
+            var enemyScr = tmpEnemy.GetComponent<EnemyBehaviour>();
+            enemyScr.wayPoints = wayPoints;
+            enemyScr.wayIndex = wayIndex;
+            enemyScr.speed = speed;
+        }
+    }
+    
     private void SpawnCoin(int count)
     {
         var rnd = new Random();
