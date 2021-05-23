@@ -11,8 +11,8 @@ public class MoneyManager : MonoBehaviour
     public Text MoneyTxt;
 
     public int GameMoney;
-    
-    void Awake()
+
+    private void Awake()
     {
         Instance = this;
     }

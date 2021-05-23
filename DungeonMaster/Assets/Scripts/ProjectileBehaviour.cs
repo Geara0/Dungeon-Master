@@ -18,8 +18,20 @@ public class ProjectileBehaviour : MonoBehaviour
         var enemyContainer = other.collider.GetComponent<EnemyContainerBehaviour>();
         var player = other.collider.GetComponent<PlayerController>();
         
-		if(enemy) enemy.TakeHit(1);
-        if(enemyContainer) enemyContainer.TakeHit(1);
+		if(enemy)
+        {
+            enemy.TakeHit(1);
+            var score = GameObject.FindGameObjectsWithTag("LevelManager")[0].GetComponent<ScoreManager>();
+            score.GameScore++;
+            score.ScoreTxt.text = score.GameScore.ToString();
+        }
+        if(enemyContainer)
+        {
+            enemyContainer.TakeHit(1);
+            var score = GameObject.FindGameObjectsWithTag("LevelManager")[0].GetComponent<ScoreManager>();
+            score.GameScore += 2;
+            score.ScoreTxt.text = score.GameScore.ToString();
+        }
         if (player) player.TakeHit(1);
         Destroy(gameObject);
     }
