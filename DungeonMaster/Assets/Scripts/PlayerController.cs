@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public GameObject videoPlayer;
     public int timeToStop;
     public GameObject objectToDestroy;
+	public AudioSource footstep;
 
     private void Start()
     {
@@ -64,4 +65,9 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * (speed * Time.deltaTime));
     }
+	
+	private void PlayFootstep()
+	{
+		footstep.Play();
+	}
 }
