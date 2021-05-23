@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5261146809741954407}
   - component: {fileID: 1494731542292595724}
   m_Layer: 0
-  m_Name: SpikyBall
+  m_Name: Enemy Container Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   speed: 3
   enemyPrefab: {fileID: 1955059225265724419, guid: 22a232df38c6c2b4c85b99ea443be26a, type: 3}
   enemyCount: 2
+  regainValue: 0.5
 --- !u!50 &5261146809741954407
 Rigidbody2D:
   serializedVersion: 4

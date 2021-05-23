@@ -15,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public int wayIndex;
     public float speed;
+	public float regainValue;
 
     public EnemyBehaviour(List<Vector2> wayPoints, float speed)
     {
@@ -56,6 +57,9 @@ public class EnemyBehaviour : MonoBehaviour
             var rnd = new Random();
             Destroy(gameObject);
             SpawnCoin(rnd.Next(1, maxMoneyCount));
+			ScoreManager.instance.AddPoints(250);
+			var player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
+			player.AddHP(regainValue);
         }
     }
 
@@ -79,8 +83,5 @@ public class EnemyBehaviour : MonoBehaviour
             baseObj.TakeHit(1);
             Destroy(gameObject);
         }
-        //TODO: 
-        //Сделай столкновение со снарядом
-        //else if ()
     }
 }
