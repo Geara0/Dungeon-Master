@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed;
     public int maxHealth = 10;
-    public int currentHealth;
+    private int currentHealth;
     public HitbarBehaviour healthBar;
 
     public ProjectileBehaviour projectilePrefab;
