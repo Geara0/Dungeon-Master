@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class WaveBehaviour : MonoBehaviour
 {
     public List<GameObject> WaveList;
     public Text wavesCountText;
+    public GameObject winScoreText;
     private int wavesCount;
+    private GameObject score;
     
     public void TryInstantiateWave()
     {

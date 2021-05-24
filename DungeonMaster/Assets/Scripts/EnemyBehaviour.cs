@@ -79,6 +79,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void SpawnHp(int probability)
     {
+        if (probability == 0) return;
         var rnd = new Random();
         if (rnd.Next(probability) != 0) return;
         

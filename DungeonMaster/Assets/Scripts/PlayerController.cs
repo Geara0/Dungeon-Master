@@ -69,8 +69,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			score.score += 1;
-			score.scoreText.text = score.score.ToString();
+			ScoreManager.instance.AddPoints(10);
 		}
 		healthBar.SetHealth(currentHealth);	
 	}

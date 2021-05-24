@@ -119,10 +119,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitpoints: 2
   wayPoints: []
+  hpPrefab: {fileID: 563115348661982441, guid: df533a79c46f6e9498c130c0754a72c3, type: 3}
+  hpDropChance: 0
   coinPrefab: {fileID: 2046083504053267905, guid: c2bba847036fe1b43ac673f34a449c13, type: 3}
   maxMoneyCount: 2
   wayIndex: 0
   speed: 3
+  regainValue: 0
 --- !u!50 &-8518074413160008491
 Rigidbody2D:
   serializedVersion: 4
