@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 1
-  price: 200
+  price: 250
   projectilePrefab: {fileID: 7377944091098659700, guid: d882a4a9706b9a44bbe90155a34f9339, type: 3}
 --- !u!61 &-2474102874901064697
 BoxCollider2D:

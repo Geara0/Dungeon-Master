@@ -100,7 +100,7 @@ MonoBehaviour:
   maxHitpoints: 7
   wayPoints: []
   hpPrefab: {fileID: 563115348661982441, guid: df533a79c46f6e9498c130c0754a72c3, type: 3}
-  hpDropChance: 7
+  hpDropChance: 10
   coinPrefab: {fileID: 2046083504053267905, guid: c2bba847036fe1b43ac673f34a449c13, type: 3}
   maxMoneyCount: 4
   wayIndex: 0

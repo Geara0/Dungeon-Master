@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOverScreen : MonoBehaviour
+public class WinScreen : MonoBehaviour
 {
     public Text scoreText;
     public Text highScoreText;
@@ -15,9 +15,9 @@ public class GameOverScreen : MonoBehaviour
 
     public void Setup(int score, int highScore)
     {
-        this.score = score;
+		this.score = score;
         this.highScore = highScore;
-        Invoke("Display", 6);
+        Invoke("Display", 0);
     }
 
     public void RestartButton()

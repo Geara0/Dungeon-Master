@@ -11,7 +11,10 @@ public class WaveBehaviour : MonoBehaviour
     public Text wavesCountText;
     public GameObject winScoreText;
     private int wavesCount;
-    private GameObject score;
+	public WinScreen WinScreen;
+	public GameObject player;
+	public GameObject UI;
+    //private GameObject score;
     
     public void TryInstantiateWave()
     {
@@ -24,6 +27,10 @@ public class WaveBehaviour : MonoBehaviour
         else if (!GameObject.Find("Alien Prefab(Clone)") && !GameObject.Find("Enemy Container Prefab(Clone)") &&
                  !GameObject.Find("Astronaut Prefab(Clone)"))
         {
+			var score = GameObject.FindGameObjectsWithTag("LevelManager")[0].GetComponent<ScoreManager>();
+			WinScreen.Setup(score.score, score.highScore);
+			Destroy(player);
+			Destroy(UI);
             Debug.Log("WIN");
         }
     }
