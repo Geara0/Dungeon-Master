@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 12311707}
   - component: {fileID: 12311706}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: EndgameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2787,7 +2787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyTxt: {fileID: 325714133}
-  GameMoney: 480
+  GameMoney: 250
 --- !u!114 &85747861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2810,7 +2810,7 @@ MonoBehaviour:
   - {fileID: 8282174076734575143, guid: 85c70c8e23edbf4489ebcc2a00552047, type: 3}
   - {fileID: 8282174076734575143, guid: 5a8886f2dcbf4534a864008ffe139687, type: 3}
   wavesCountText: {fileID: 351073167}
-  winScoreText: {fileID: 0}
+  winScoreText: {fileID: 1668931208}
   WinScreen: {fileID: 1822063110}
   player: {fileID: 670568192}
   UI: {fileID: 1426295288}
@@ -39941,7 +39941,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 322
+  m_Text: 250
 --- !u!222 &325714134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -43163,7 +43163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  maxHealth: 20
+  maxHealth: 10
   healthBar: {fileID: 43741340}
   projectilePrefab: {fileID: 7377944091098659700, guid: d882a4a9706b9a44bbe90155a34f9339, type: 3}
   launchOffset: {fileID: 1814547558}
