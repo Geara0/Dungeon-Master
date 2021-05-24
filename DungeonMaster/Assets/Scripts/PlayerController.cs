@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public float speed;
-    public float maxHealth;
-    public float currentHealth;
+    public int maxHealth = 10;
+    private int currentHealth;
     public HitbarBehaviour healthBar;
 
     public ProjectileBehaviour projectilePrefab;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public GameObject objectToDestroy;
 	public GameOverScreen GameOverScreen;
 	private ScoreManager score;
+    public AudioSource footstep;
 
     private void Start()
     {
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    public void TakeHit(float damage)
+    public void TakeHit(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 	
-	public void AddHP(float amount)
+	public void AddHP(int amount)
 	{
 		if(currentHealth < maxHealth)
 		{
@@ -84,4 +85,9 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * (speed * Time.deltaTime));
     }
+	
+	private void PlayFootstep()
+	{
+		footstep.Play();
+	}
 }

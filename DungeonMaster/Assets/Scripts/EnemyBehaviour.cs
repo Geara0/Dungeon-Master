@@ -62,8 +62,6 @@ public class EnemyBehaviour : MonoBehaviour
             SpawnCoin(rnd.Next(1, maxMoneyCount));
             SpawnHp(hpDropChance);
 			ScoreManager.instance.AddPoints(250);
-			var player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
-			player.AddHP(regainValue);
         }
     }
 
