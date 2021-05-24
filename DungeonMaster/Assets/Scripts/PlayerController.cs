@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public float speed;
-    public int maxHealth = 10;
+    public int maxHealth;
     private int currentHealth;
     public HitbarBehaviour healthBar;
 
