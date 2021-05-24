@@ -2787,7 +2787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyTxt: {fileID: 325714133}
-  GameMoney: 480
+  GameMoney: 200
 --- !u!114 &85747861
 MonoBehaviour:
   m_ObjectHideFlags: 0
