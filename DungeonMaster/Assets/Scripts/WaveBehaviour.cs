@@ -15,9 +15,10 @@ public class WaveBehaviour : MonoBehaviour
         {
             NewWave();
             wavesCount++;
-            wavesCountText.text = "WAVE: " + wavesCount.ToString();
+            wavesCountText.text = "WAVE: " + wavesCount;
         }
-        else if (!GameObject.Find("Enemy Prefab(Clone)") && !GameObject.Find("Enemy Container Prefab(Clone)"))
+        else if (!GameObject.Find("Alien Prefab(Clone)") && !GameObject.Find("Enemy Container Prefab(Clone)") &&
+                 !GameObject.Find("Astronaut Prefab(Clone)"))
         {
             Debug.Log("WIN");
         }
