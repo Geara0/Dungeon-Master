@@ -30,7 +30,7 @@ public class BaseBehaviour : MonoBehaviour
             Destroy(gameObject);
             Destroy(objectToDestroy);
 			var score = GameObject.FindGameObjectsWithTag("LevelManager")[0].GetComponent<ScoreManager>();
-			GameOverScreen.Setup();
+			GameOverScreen.Setup(score.score, score.highScore);
         }
     }
     

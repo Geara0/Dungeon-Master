@@ -53,9 +53,7 @@ public class PlayerController : MonoBehaviour
             Destroy(videoPlayer, timeToStop);
             Destroy(gameObject);
             Destroy(objectToDestroy);
-			GameOverScreen.score = score.score;
-			GameOverScreen.highScore = score.highScore;
-			GameOverScreen.Setup();
+            GameOverScreen.Setup(score.score, score.highScore);
         }
     }
 	
