@@ -9,12 +9,16 @@ public class EnemyBehaviour : MonoBehaviour
     private int hitpoints;
     public int maxHitpoints;
     public List<Vector2> wayPoints;
+
+    public GameObject hpPrefab;
+    public int hpDropChance;
     
     public GameObject coinPrefab;
     public int maxMoneyCount;
 
     public int wayIndex;
     public float speed;
+	public float regainValue;
 
     public EnemyBehaviour(List<Vector2> wayPoints, float speed)
     {
@@ -56,6 +60,10 @@ public class EnemyBehaviour : MonoBehaviour
             var rnd = new Random();
             Destroy(gameObject);
             SpawnCoin(rnd.Next(1, maxMoneyCount));
+            SpawnHp(hpDropChance);
+			ScoreManager.instance.AddPoints(250);
+			var player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
+			player.AddHP(regainValue);
         }
     }
 
@@ -71,6 +79,17 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    private void SpawnHp(int probability)
+    {
+        var rnd = new Random();
+        if (rnd.Next(probability) != 0) return;
+        
+        var posX = (float) rnd.NextDouble() * 2 - 1;
+        var posY = (float) rnd.NextDouble() * 2 - 1;
+        Instantiate(hpPrefab, transform.position + new Vector3(posX, posY), 
+            Quaternion.Euler(0, 0, 0));
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         var baseObj = other.collider.GetComponent<BaseBehaviour>();
@@ -79,8 +98,5 @@ public class EnemyBehaviour : MonoBehaviour
             baseObj.TakeHit(1);
             Destroy(gameObject);
         }
-        //TODO: 
-        //Сделай столкновение со снарядом
-        //else if ()
     }
 }

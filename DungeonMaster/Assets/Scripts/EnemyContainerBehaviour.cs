@@ -10,6 +10,9 @@ public class EnemyContainerBehaviour : MonoBehaviour
     public int maxHitpoints;
     public List<Vector2> wayPoints;
     
+    public GameObject hpPrefab;
+    public int hpDropChance;
+    
     public GameObject coinPrefab;
     public int maxMoneyCount;
 
@@ -18,6 +21,7 @@ public class EnemyContainerBehaviour : MonoBehaviour
     
     public GameObject enemyPrefab;
     public int enemyCount;
+    public float regainValue;
     
     public EnemyContainerBehaviour(List<Vector2> wayPoints, float speed)
     {
@@ -59,7 +63,11 @@ public class EnemyContainerBehaviour : MonoBehaviour
             var rnd = new Random();
             Destroy(gameObject);
             SpawnCoin(rnd.Next(1, maxMoneyCount));
+            SpawnHp(hpDropChance);
             SpawnEnemies(enemyCount);
+            ScoreManager.instance.AddPoints(500);
+            var player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
+            player.AddHP(regainValue);
         }
     }
 
@@ -89,6 +97,17 @@ public class EnemyContainerBehaviour : MonoBehaviour
             Instantiate(coinPrefab, transform.position + new Vector3(posX, posY), 
                 Quaternion.Euler(0, 0, 0));
         }
+    }
+    
+    private void SpawnHp(int probability)
+    {
+        var rnd = new Random();
+        if (rnd.Next(probability) != 0) return;
+        
+        var posX = (float) rnd.NextDouble() * 2 - 1;
+        var posY = (float) rnd.NextDouble() * 2 - 1;
+        Instantiate(hpPrefab, transform.position + new Vector3(posX, posY), 
+            Quaternion.Euler(0, 0, 0));
     }
 
     private void OnCollisionEnter2D(Collision2D other)

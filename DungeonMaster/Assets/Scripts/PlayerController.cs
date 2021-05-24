@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public float speed;
-    public int maxHealth = 10;
-    private int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
     public HitbarBehaviour healthBar;
 
     public ProjectileBehaviour projectilePrefab;
@@ -19,7 +20,8 @@ public class PlayerController : MonoBehaviour
     public GameObject videoPlayer;
     public int timeToStop;
     public GameObject objectToDestroy;
-	public AudioSource footstep;
+	public GameOverScreen GameOverScreen;
+	private ScoreManager score;
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         videoPlayer.SetActive(false);
+        score = GameObject.FindGameObjectsWithTag("LevelManager")[0].GetComponent<ScoreManager>();
     }
 
     private void Update()
@@ -39,7 +42,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    public void TakeHit(int damage)
+    public void TakeHit(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -49,8 +52,27 @@ public class PlayerController : MonoBehaviour
             Destroy(videoPlayer, timeToStop);
             Destroy(gameObject);
             Destroy(objectToDestroy);
+			GameOverScreen.score = score.score;
+			GameOverScreen.highScore = score.highScore;
+			GameOverScreen.Setup();
         }
     }
+	
+	public void AddHP(float amount)
+	{
+		if(currentHealth < maxHealth)
+		{
+			currentHealth += amount % maxHealth;
+			if(currentHealth > maxHealth)
+				currentHealth -= currentHealth % maxHealth;
+		}
+		else
+		{
+			score.score += 1;
+			score.scoreText.text = score.score.ToString();
+		}
+		healthBar.SetHealth(currentHealth);	
+	}
 
     public static void GainMoney(int count)
     {
@@ -62,9 +84,4 @@ public class PlayerController : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * (speed * Time.deltaTime));
     }
-	
-	private void PlayFootstep()
-	{
-		footstep.Play();
-	}
 }

@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Main Menu.unity
+    guid: df60b31acf449664b9d4a752a4237709
+  - enabled: 1
+    path: Assets/Scenes/Fuck this is the scene merge it.unity
+    guid: 3f1567d23085a0546bff81f7a4f2c9b5
   m_configObjects: {}

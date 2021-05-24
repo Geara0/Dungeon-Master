@@ -104,6 +104,7 @@ MonoBehaviour:
   speed: 3
   enemyPrefab: {fileID: 106345180539823977, guid: dc2db1d07b829564398f041a290c1ac8, type: 3}
   enemyCount: 2
+  regainValue: 0.5
 --- !u!50 &5261146809741954407
 Rigidbody2D:
   serializedVersion: 4
