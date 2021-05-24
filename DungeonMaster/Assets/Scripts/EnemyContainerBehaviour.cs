@@ -21,7 +21,6 @@ public class EnemyContainerBehaviour : MonoBehaviour
     
     public GameObject enemyPrefab;
     public int enemyCount;
-    public float regainValue;
     
     public EnemyContainerBehaviour(List<Vector2> wayPoints, float speed)
     {
@@ -66,8 +65,6 @@ public class EnemyContainerBehaviour : MonoBehaviour
             SpawnHp(hpDropChance);
             SpawnEnemies(enemyCount);
             ScoreManager.instance.AddPoints(500);
-            var player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerController>();
-            player.AddHP(regainValue);
         }
     }
 
@@ -118,8 +115,5 @@ public class EnemyContainerBehaviour : MonoBehaviour
             baseObj.TakeHit(1);
             Destroy(gameObject);
         }
-        //TODO: 
-        //Сделай столкновение со снарядом
-        //else if ()
     }
 }
