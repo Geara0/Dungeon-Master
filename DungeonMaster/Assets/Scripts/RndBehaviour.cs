@@ -20,6 +20,7 @@ public class RndBehaviour : MonoBehaviour, ITower
 
     private void Start()
     {
+        projectileSpawner.transform.localPosition = new Vector3(-0.644f, 0, 0);
         StartCoroutine(nameof(DoFire));
     }
 

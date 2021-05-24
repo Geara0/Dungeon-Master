@@ -2800,6 +2800,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveList:
+  - {fileID: 8282174076734575143, guid: 3a6bd22cecd9ac947beab1404ecbf52a, type: 3}
+  - {fileID: 8282174076734575143, guid: 954e60964c962694facb20cc1179351f, type: 3}
+  - {fileID: 8282174076734575143, guid: cb8d4cae7b635c94aacbd3497488c9dc, type: 3}
+  - {fileID: 8282174076734575143, guid: ed1825380989fc748acf788c91200ace, type: 3}
+  - {fileID: 8282174076734575143, guid: 5325c863944e63e43b25b533342ac189, type: 3}
+  - {fileID: 8282174076734575143, guid: e19a257e793f4574ba414ab8aa8bf05e, type: 3}
+  - {fileID: 8282174076734575143, guid: 85c70c8e23edbf4489ebcc2a00552047, type: 3}
   - {fileID: 8282174076734575143, guid: 5a8886f2dcbf4534a864008ffe139687, type: 3}
   wavesCountText: {fileID: 351073167}
   winScoreText: {fileID: 0}

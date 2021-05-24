@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8282174076734575140}
   - component: {fileID: 8282174076734575141}
   m_Layer: 6
-  m_Name: 1Spawner
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   start: {fileID: 8282174076734575143}
-  spawnRate: 1
-  enemyCount: 01000000
+  spawnRate: 2
+  enemyCount: 1a000000
   enemy:
-  - {fileID: 1558218733873382634, guid: 1c3867ea97cb18d4f954fa787172dc78, type: 3}
+  - {fileID: 1955059225265724419, guid: 22a232df38c6c2b4c85b99ea443be26a, type: 3}
