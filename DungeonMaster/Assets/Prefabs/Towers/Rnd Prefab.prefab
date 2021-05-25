@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 6
   spinCount: 3
-  price: 450
+  price: 400
   projectilePrefab: {fileID: 7377944091098659700, guid: d882a4a9706b9a44bbe90155a34f9339, type: 3}
   projectileSpawner: {fileID: 7933497801341097782}
 --- !u!61 &7933497801943520833

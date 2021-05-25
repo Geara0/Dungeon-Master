@@ -46,6 +46,6 @@ MonoBehaviour:
   speed: 2
   start: {fileID: 8282174076734575143}
   spawnRate: 1
-  enemyCount: 0a000000
+  enemyCount: 1e000000
   enemy:
   - {fileID: 106345180539823977, guid: dc2db1d07b829564398f041a290c1ac8, type: 3}

@@ -21,6 +21,8 @@ public class EnemyContainerBehaviour : MonoBehaviour
     
     public GameObject enemyPrefab;
     public int enemyCount;
+
+    public int gainPoints;
     
     public EnemyContainerBehaviour(List<Vector2> wayPoints, float speed)
     {
@@ -61,10 +63,10 @@ public class EnemyContainerBehaviour : MonoBehaviour
         {
             var rnd = new Random();
             Destroy(gameObject);
-            SpawnCoin(rnd.Next(1, maxMoneyCount));
+            SpawnCoin(rnd.Next(1, maxMoneyCount + 1));
             SpawnHp(hpDropChance);
             SpawnEnemies(enemyCount);
-            ScoreManager.instance.AddPoints(500);
+            ScoreManager.instance.AddPoints(gainPoints);
         }
     }
 

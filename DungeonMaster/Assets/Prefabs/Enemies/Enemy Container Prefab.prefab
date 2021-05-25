@@ -102,7 +102,7 @@ MonoBehaviour:
   hpPrefab: {fileID: 563115348661982441, guid: df533a79c46f6e9498c130c0754a72c3, type: 3}
   hpDropChance: 0
   coinPrefab: {fileID: 2046083504053267905, guid: c2bba847036fe1b43ac673f34a449c13, type: 3}
-  maxMoneyCount: 5
+  maxMoneyCount: 4
   speed: 3
   enemyPrefab: {fileID: 106345180539823977, guid: dc2db1d07b829564398f041a290c1ac8, type: 3}
   enemyCount: 4

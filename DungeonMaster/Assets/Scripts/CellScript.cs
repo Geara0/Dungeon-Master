@@ -15,6 +15,7 @@ public class CellScript : MonoBehaviour
 
     public GameObject DotPrefab;
     public GameObject RndPrefab;
+    public GameObject RndAllPrefab;
     public GameObject ShopPref;
 
     public Scene scene;
@@ -31,6 +32,14 @@ public class CellScript : MonoBehaviour
     {
         //var tmpTower = Instantiate(gameObject.AddComponent<DotBehaviour>());
         var tmpTower = Instantiate(RndPrefab, transform, false);
+        tmpTower.transform.position = transform.position;
+        hasTower = true;
+    }
+    
+    public void BuildRndAll()
+    {
+        //var tmpTower = Instantiate(gameObject.AddComponent<DotBehaviour>());
+        var tmpTower = Instantiate(RndAllPrefab, transform, false);
         tmpTower.transform.position = transform.position;
         hasTower = true;
     }
