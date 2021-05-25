@@ -18,7 +18,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     public int wayIndex;
     public float speed;
-	public float regainValue;
+    
+    public int gainPoints;
 
     public EnemyBehaviour(List<Vector2> wayPoints, float speed)
     {
@@ -59,9 +60,9 @@ public class EnemyBehaviour : MonoBehaviour
         {
             var rnd = new Random();
             Destroy(gameObject);
-            SpawnCoin(rnd.Next(1, maxMoneyCount));
+            SpawnCoin(rnd.Next(0, maxMoneyCount + 1));
             SpawnHp(hpDropChance);
-			ScoreManager.instance.AddPoints(250);
+			ScoreManager.instance.AddPoints(gainPoints);
         }
     }
 

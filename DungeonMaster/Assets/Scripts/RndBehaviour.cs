@@ -11,9 +11,21 @@ public class RndBehaviour : MonoBehaviour, ITower
     public float fireRate = 1;
     public float spinCount = 3;
     public int price = 200;
-    private float nextShotTime;
-    private float nextSpinTime;
-    private bool fullRnd = true;
+    //private float nextShotTime;
+    //private float nextSpinTime;
+    //private bool fullRnd = true;
+
+    private float rotationAngle = 180 + 22.5f; // - 22.5f
+    private float rotationDelta = 22.5f;
+    private List<(float, float)> rotatioinPoints = new List<(float, float)>
+    {
+        (-0.66f, 0f), (-0.66f, 0.33f), (-0.66f, 0.66f),
+        (-0.33f, 0.66f), (0f, 0.66f), (0.33f, 0.66f), (0.66f, 0.66f),
+        (0.66f, 0.33f), (0.66f, 0f), (0.66f, -0.33f), (0.66f, -0.66f),
+        (0.33f, -0.66f), (0f, -0.66f), (-0.33f, -0.66f), (-0.66f, -0.66f),
+        (-0.66f, -0.33f)
+    };
+    private int rotationIndex;
 
     public ProjectileBehaviour projectilePrefab;
     public Transform projectileSpawner;
@@ -36,6 +48,7 @@ public class RndBehaviour : MonoBehaviour, ITower
 
     private void MoveProjectileSpawner()
     {
+        /*
         if (fullRnd)
         {
             if (projectileSpawner.transform.position.y < transform.position.y + transform.localScale.y / 2)
@@ -60,22 +73,26 @@ public class RndBehaviour : MonoBehaviour, ITower
                 projectileSpawner.transform.position += transform.up * (transform.localScale.y / spinCount);
             }
         }
+        */
+
+        rotationAngle -= rotationDelta;
+        var (x, y) = rotatioinPoints[rotationIndex % rotatioinPoints.Count];
+        projectileSpawner.transform.localPosition =
+            new Vector3(x, y);
+        rotationIndex++;
     }
 
     public void Shoot()
     {
-        var dx = Math.Sqrt(transform.position.x * transform.position.x);
-        var dy = Math.Sqrt(Math.Pow(projectileSpawner.transform.position.x - transform.position.x, 2) +
-                           Math.Pow(projectileSpawner.transform.position.y - transform.position.y, 2));
-        var angle = (float) (Math.Acos(-transform.position.x *
-                                       (projectileSpawner.transform.position.x - transform.position.x) /
-                                       (dx * dy)) * 180 / Math.PI);
-
-        angle = transform.position.y > projectileSpawner.transform.position.y
-            ? 360 - angle
-            : angle;
-
-        Instantiate(projectilePrefab, projectileSpawner.position, Quaternion.Euler(0f, 0f, angle));
+        //var dx = Math.Sqrt(transform.position.x * transform.position.x);
+        //var dy = Math.Sqrt(Math.Pow(projectileSpawner.transform.position.x - transform.position.x, 2) +
+        //                   Math.Pow(projectileSpawner.transform.position.y - transform.position.y, 2));
+        //var angle = (float) (Math.Acos(-transform.position.x *
+        //                               (projectileSpawner.transform.position.x - transform.position.x) /
+        //                               (dx * dy)) * 180 / Math.PI);
+        //Instantiate(projectilePrefab, projectileSpawner.position, Quaternion.Euler(0f, 0f, angle));
+        Instantiate(projectilePrefab, projectileSpawner.position, 
+            Quaternion.Euler(0f, 0f, rotationAngle));
     }
 
 
